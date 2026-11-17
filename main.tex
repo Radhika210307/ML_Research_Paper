@@ -49,8 +49,8 @@
     \colorbox{navy}{%
       \parbox[c][14pt][c]{\dimexpr\textwidth+1cm\relax}{%
         \hspace{6pt}\scriptsize\bfseries\color{white}%
-        ML ASSIGNMENT | B.Sc. (H) Computer Science, Sem VI, University of Delhi%
-        \hfill Journal Case Study\hspace{6pt}%
+        B.Sc. (Hons.) Computer Science | Semester V | Ramanujan College, University of Delhi%
+        \hfill Machine Learning Assignment\hspace{6pt}%
       }%
     }%
   }%
@@ -68,13 +68,13 @@
 \twocolumn[{
 \begin{@twocolumnfalse}
 \begin{center}
-{\Large\bfseries\color{navy} Clustering Indian Districts by Seasonal Crop-Production Profiles Using Classical Machine-Learning Methods\par}
+{\Large\bfseries\color{navy} Clustering Indian Districts by Seasonal Crop-Production Profiles Using Classical\\Machine-Learning Methods\par}
 \vspace{5pt}
 {\normalsize Radhika\par}
 \vspace{2pt}
-{\small Department of Computer Science, [College Name], University of Delhi, New Delhi, India\\
-University Roll No.: 24020570050 \;|\; E-mail: [Student E-mail]\\
-Course: Machine Learning (B.Sc. (H) Computer Science, Semester VI) \;|\; Supervisor: [Supervisor Name]\\
+{\small Department of Computer Science, Ramanujan College, University of Delhi, New Delhi, India\\
+University Roll No.: 24020570050 \;|\; E-mail: Radhika93962@gmail.com\\
+Course: Machine Learning (B.Sc. (H) Computer Science, Semester V) \;|\; Supervisor: Dr. Nikhil Kumar Rajput\\
 Problem No. 4 from ML Application Problems \;|\; Article type: Case Study}
 \end{center}
 \vspace{4pt}
@@ -142,7 +142,6 @@ For each district $d$ and season $s$, area is summed across crops and years. The
 \end{equation}
 To prevent crops with large reported production magnitudes from dominating the district's production signature, production is first summed within each district--crop--season. For each district--crop pair, its production is normalised across the three seasons; these crop-level seasonal proportions are then averaged equally across crops in that district. The resulting $P_{d,s}$ is a crop-balanced seasonal production-composition feature, not the district's aggregate share of total tonnage. The six clustering variables are $A_{d,s}$ and $P_{d,s}$ for the three seasons. Both three-part compositions sum to approximately one for each retained district.
 
-\clearpage
 \section{Methodology}
 \subsection{Standardisation and K-Means}
 The six features are standardised using the feature-wise mean and standard deviation:
@@ -196,7 +195,6 @@ All experiments use the six standardised features for 643 state--district units.
 
 For K-Means, inertia and Euclidean silhouette are calculated for each $k\in\{2,3,\ldots,10\}$. The selected value is then used for K-Means and both hierarchical comparisons. The Euclidean and cosine silhouette values are calculated separately because silhouette depends on the distance metric. Davies--Bouldin is computed in standardised Euclidean space for all three partitions. The cluster profiles reported below are the means of the six original (unstandardised) share features within the K-Means labels, which makes the values directly interpretable as proportions.
 
-\clearpage
 \section{Results}
 \subsection{Selection of the number of clusters}
 The inertia curve decreases as $k$ increases, as expected because additional clusters reduce within-cluster variation. The reduction is steepest at smaller values of $k$ and becomes more gradual thereafter. The Euclidean silhouette score is highest at $k=2$ (0.4082) among the tested values from 2 to 10. The next-highest tested value is $k=8$ (0.3705), while $k=3$ gives the lowest score (0.3291). Based on the maximum tested silhouette and the interpretability of a two-group summary, $k=2$ is selected for the main analysis. The elbow curve does not show a uniquely sharp elbow; therefore, the choice is supported primarily by the silhouette comparison rather than a visually exact elbow point.
@@ -309,7 +307,7 @@ This case study applied K-Means and agglomerative hierarchical clustering to six
 \section*{Declarations}
 \noindent\textbf{Data availability.} The study uses the supplied crop-production CSV mirror of the Government of India's district-wise, season-wise crop-production statistics. The official resource is available at \smallurl{https://www.data.gov.in/resource/district-wise-season-wise-crop-production-statistics-1997}; the Kaggle mirror listed in the project allocation is \smallurl{https://www.kaggle.com/datasets/abhinand05/crop-production-in-india}. The analysis file used for the reported results is included with the project materials.
 
-\noindent\textbf{Code availability.} The complete executed Jupyter Notebook and generated result files are intended to be submitted through the student's GitHub repository. [Insert final GitHub URL after repository publication.]
+\noindent\textbf{Code availability.} The Jupyter Notebook, source CSV and LaTeX source are included with the assignment materials. The notebook uses a fixed random seed and writes its tables and figures to the project folder for reproducibility.
 
 \noindent\textbf{Conflict of interest.} The author declares no conflict of interest.
 
